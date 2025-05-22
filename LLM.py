@@ -4,7 +4,7 @@ import re
 
 # ✅ 使用 DeepSeek 的 API Key 和 base_url
 client = OpenAI(
-    api_key="sk-83444752ca6f437997542ad3d02746f0",  # ← 替换为你的真实 Key
+    api_key="########################",  # ← 替换为你的真实 Key
     base_url="https://api.deepseek.com"
 )
 
