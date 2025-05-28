@@ -5,7 +5,7 @@ from pycorrector import Corrector
 
 # DeepSeek API 初始化
 client = OpenAI(
-    api_key="sk-83444752ca6f437997542ad3d02746f0",
+    api_key="",
     base_url="https://api.deepseek.com"
 )
 
