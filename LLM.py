@@ -4,7 +4,7 @@ import re
 
 # ✅ 使用 DeepSeek 的 API Key 和 base_url
 client = OpenAI(
-    api_key="########################",  # ← 替换为你的真实 Key
+    api_key="",  # ← 替换为你的真实 Key
     base_url="https://api.deepseek.com"
 )
 
@@ -14,6 +14,7 @@ def detect_typo_with_deepseek(text):
 请输出标准 JSON 格式，包含以下字段：
 - corrected_text：纠正后的文本
 - corrections：一个列表，每条包含 original（原错字）、corrected（正确字）、position（错字在文本中的位置）
+- message：如果文本无错别字，请 message 字段填“文本无错误”，并且 corrections 为空列表。
 
 文本如下：
 {text}
@@ -50,8 +51,9 @@ if __name__ == "__main__":
             break
 
         result = detect_typo_with_deepseek(user_input)
-
-        if result:
+        if result.get("corrections") == []:
+                print(" 文本无错误√")
+        elif result.get("corrections") != []:
             print("\n✅ 纠正结果：")
             print("原文：", user_input)
             print("纠正后：", result["corrected_text"])
