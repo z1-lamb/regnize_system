@@ -11,7 +11,7 @@ plt.rcParams['axes.unicode_minus'] = False    # 解决负号显示为方块的�
 
 # 初始化 LLM (DeepSeek API)
 client = OpenAI(
-    api_key="sk-83444752ca6f437997542ad3d02746f0",  # ← 替换为你的 Key
+    api_key="##################",  # ← 替换为你的 Key
     base_url="https://api.deepseek.com"
 )
 
